@@ -1,0 +1,48 @@
+{
+    "id": "d0913dd6-2bb0-4aae-8946-a64fbb6e7b2a",
+    "name": "IISManager",
+    "friendlyName": "IIS Manager",
+    "description": "Performs IIS related tasks",
+    "helpMarkDown": "",
+    "category": "Build",
+    "visibility": [
+        "Build"
+    ],
+    "runsOn": [
+        "Agent",
+        "DeploymentGroup"
+    ],
+    "author": "Cory Stein",
+    "version": {
+        "Major": 0,
+        "Minor": 0,
+        "Patch": 0
+    },
+    "instanceNameFormat": "Prints Hello World",
+    "groups": [
+        {
+            "name": "advanced",
+            "displayName": "Advanced",
+            "isExpanded": false
+        }
+    ],
+    "inputs": [
+        {
+            "name": "name",
+            "type": "string",
+            "label": "Name",
+            "defaultValue": "",
+            "required": true,
+            "helpMarkDown": "Enter your name to print to the console"
+        }
+    ],
+    "execution": {
+        "PowerShell3": {
+            "target": "powershell.ps1",
+            "platforms": [
+                "windows"
+            ],
+            "workingDirectory": "$(currentDirectory)"
+        }
+    }
+}
